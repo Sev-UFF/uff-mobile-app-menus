@@ -4,7 +4,7 @@
   "description": "Gerenciador do conteúdo dos menus que aparecerá no aplicativo da UFF",
   "version": "0.0.1",
   "license": "GPL-2.0+",
-  "homepage": "http://www.uff.br/uff.br",
+  "homepage": "http://www.uff.br",
   "keywords": [],
   "devDependencies": {
     "autoprefixer": "^6.0.1",

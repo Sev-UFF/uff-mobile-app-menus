@@ -14,21 +14,6 @@
  * @package UFF_MOBILE_APP_MENUS
  */
 
-/**
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2 or, at
- * your discretion, any later version, as published by the Free
- * Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -40,6 +25,14 @@ if ( ! defined( 'UFF_MOBILE_APP_MENUS_FILE' ) ) {
 	define( 'UFF_MOBILE_APP_MENUS_FILE', __FILE__ );
 	define( 'UFF_MOBILE_APP_MENUS_DIR', dirname( __FILE__ ) );
 }
+
+
+$autoload = UFF_MOBILE_APP_MENUS_DIR . '/vendor/autoload.php';
+if (file_exists( autoload )){
+	require_once $autoload;
+}
+
+use Inc\Activate;
 
 if (!class_exists('UFFMobileAppMenusPlugin')){
 
@@ -62,12 +55,11 @@ if (!class_exists('UFFMobileAppMenusPlugin')){
 		}
 
 		function activate(){
-			$this->create_database();
-			flush_rewrite_rules();
+			Activate::activate();
 		}
 
 		function deactivate(){
-			flush_rewrite_rules();
+			Deactivate::deactivate();
 		}
 
 
@@ -95,7 +87,7 @@ if (!class_exists('UFFMobileAppMenusPlugin')){
 		}
 
 		function admin_index(){
-			require_once plugin_dir_path (UFF_MOBILE_APP_MENUS_FILE, 'templates/admin.php')
+			require_once plugin_dir_path (UFF_MOBILE_APP_MENUS_FILE, 'templates/admin.php');
 		}
 		
 

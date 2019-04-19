@@ -1,0 +1,19 @@
+{
+    "name": "uff/uff-mobile-app-menus",
+    "description": "Gerenciador do conteúdo dos menus que aparecerá no aplicativo da UFF",
+    "type": "plugin",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Thiago Augusto",
+            "email": "thaugusto@id.uff.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\" : "./inc"
+        }
+    }
+}
