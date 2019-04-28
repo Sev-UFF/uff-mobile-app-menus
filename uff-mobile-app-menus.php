@@ -32,21 +32,18 @@ if (file_exists( autoload )){
 	require_once $autoload;
 }
 
-use Inc\Base\Activate;
-use Inc\Base\Deactivate;
-
-function activate_uff_plugin(){
-	Activate::activate();
-}
-
-function deactivate_uff_plugin(){
-	Deactivate::deactivate();
-}
 
 //activation
+function activate_uff_plugin(){
+	Inc\Base\Activate::activate();
+}
 register_activation_hook(UFF_MOBILE_APP_MENUS_FILE, 'activate_uff_plugin');
 
+
 //deactivation
+function deactivate_uff_plugin(){
+	Inc\Base\Deactivate::deactivate();
+}
 register_deactivation_hook(UFF_MOBILE_APP_MENUS_FILE, 'deactivate_uff_plugin');
 
 if (class_exists('Inc\\Init')){
