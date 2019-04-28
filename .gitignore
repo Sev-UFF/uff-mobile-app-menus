@@ -14,7 +14,6 @@ sftp-config.json
 ### Dev ###
 /build
 /node_modules/
-/vendor/
 composer.lock
 
 ### Tests ###

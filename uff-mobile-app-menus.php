@@ -27,9 +27,8 @@ if ( ! defined( 'UFF_MOBILE_APP_MENUS_FILE' ) ) {
 }
 
 
-$autoload = UFF_MOBILE_APP_MENUS_DIR . '/vendor/autoload.php';
-if (file_exists( autoload )){
-	require_once $autoload;
+if (file_exists( UFF_MOBILE_APP_MENUS_DIR . '/vendor/autoload.php' )){
+	require_once UFF_MOBILE_APP_MENUS_DIR . '/vendor/autoload.php';
 }
 
 
