@@ -32,85 +32,26 @@ if (file_exists( autoload )){
 	require_once $autoload;
 }
 
-use Inc\Activate;
+use Inc\Base\Activate;
+use Inc\Base\Deactivate;
 
-if (!class_exists('UFFMobileAppMenusPlugin')){
-
-	class UFFMobileAppMenusPlugin{
-
-
-		public $plugin;
-
-		function __construct(){
-			$this->$plugin = plugin_basename(UFF_MOBILE_APP_MENUS_FILE);
-		}
-
-
-		static function uninstall(){
-			//deletando posts como exemplo
-			global $wpdb;
-			$wpdb->query("delete from wp_posts where post_type = 'book'");
-			$wpdb->query("delete from wp_postmeta where post_id not in (select id from wp_posts)");
-			$wpdb->query("delete from wp_term_relationships where object not in (select id from wp_posts)");
-		}
-
-		function activate(){
-			Activate::activate();
-		}
-
-		function deactivate(){
-			Deactivate::deactivate();
-		}
-
-
-		function register(){
-			//add_action('init', array($this, 'create_database'));
-			add_action('admin_enqueue_scripts', array($this, 'enqueue'));
-			add_action('admin_menu', array($this,'add_admin_pages'));
-			add_filter("plugin_action_links_$this->$plugin", array($this, 'settings_link'));
-		}
-
-		function settings_link($links){
-			$settings_link = '<a href="admin.php?page=uff_mobile_app_menus_plugin">Configurar</a>';
-			array_push($links, $settings_link);
-
-			return $links;
-		}
-
-		function enqueue(){
-			wp_enqueue_style('uffmobilestyle', plugins_url('/assets/style.css', UFF_MOBILE_APP_MENUS_FILE));
-			wp_enqueue_script('uffmobilescript', plugins_url('/assets/script.css', UFF_MOBILE_APP_MENUS_FILE));
-		}
-
-		function add_admin_pages(){
-			add_menu_page('UFF Mobile App Menus', 'UFF Mobile App Menus', 'manage_options', 'uff_mobile_app_menus_plugin', array($this, 'admin_index'), 'dashicons-smartphone', 110);
-		}
-
-		function admin_index(){
-			require_once plugin_dir_path (UFF_MOBILE_APP_MENUS_FILE, 'templates/admin.php');
-		}
-		
-
-		function create_database(){
-	//no tutorial foi criado um post type
-	//aqui eu quero fazer meu plugin provalmente criar uma nova tabela
-		}
-	}
+function activate_uff_plugin(){
+	Activate::activate();
 }
 
-$UFFPlugin = new UFFMobileAppMenusPlugin();
-$UFFPlugin->register();
+function deactivate_uff_plugin(){
+	Deactivate::deactivate();
+}
 
 //activation
-register_activation_hook(UFF_MOBILE_APP_MENUS_FILE, array($UFFPlugin, 'activate'));
+register_activation_hook(UFF_MOBILE_APP_MENUS_FILE, 'activate_uff_plugin');
 
 //deactivation
-register_deactivation_hook(UFF_MOBILE_APP_MENUS_FILE, array($UFFPlugin, 'deactivate'));
+register_deactivation_hook(UFF_MOBILE_APP_MENUS_FILE, 'deactivate_uff_plugin');
 
-//uninstall
-register_uninstall_hook(UFF_MOBILE_APP_MENUS_FILE, array($UFFPlugin, 'uninstall'));
-
-
+if (class_exists('Inc\\Init')){
+	Inc\Init::register_services();
+}
 
 //require_once( UFF_MOBILE_APP_MENUS_DIR . '/inc/qtx_class_translator.php' );
 //

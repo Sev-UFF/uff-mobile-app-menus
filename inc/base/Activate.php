@@ -1,6 +1,9 @@
 <?php
+/** 
+* @package UFF_MOBILE_APP_MENUS
+*/
 
-namespace Inc;
+namespace Inc\Base;
 
 class Activate{
     public static function activate(){
