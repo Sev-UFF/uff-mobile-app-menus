@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Inc\\Api\\Callbacks\\AdminCallbacks' => $baseDir . '/inc/Api/Callbacks/AdminCallbacks.php',
+    'Inc\\Api\\SettingsApi' => $baseDir . '/inc/Api/SettingsApi.php',
     'Inc\\Base\\Activate' => $baseDir . '/inc/base/Activate.php',
     'Inc\\Base\\Deactivate' => $baseDir . '/inc/base/Deactivate.php',
     'Inc\\Base\\Enqueue' => $baseDir . '/inc/base/Enqueue.php',
