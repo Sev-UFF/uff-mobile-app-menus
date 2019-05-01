@@ -27,11 +27,36 @@ class AdminCallbacks
 	public function alecadddOptionsGroup( $input )
 	{
 		return $input;
-	}
+    }
+    
+    public function testSev( $input )
+	{
+        echo 'mim acher';
+        echo $input;
+
+		return $input;
+    }
 	public function alecadddAdminSection()
 	{
 		echo 'Check this beautiful section!';
-	}
+    }
+    
+    public function sevTestNew()
+	{
+		$value = esc_attr( get_option( 'test_sev' ) );
+        echo '</br></br>' . $value . '</br></br>';
+        
+        $options = get_option('test_sev');
+        $items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
+        echo "<select name='test_sev'>";
+        foreach($items as $item) {
+            $selected = ($options==$item) ? 'selected="selected"' : '';
+            echo "<option value='$item' $selected>$item</option>";
+        }
+        echo "</select>";
+    }
+    
+
 	public function alecadddTextExample()
 	{
 		$value = esc_attr( get_option( 'text_example' ) );

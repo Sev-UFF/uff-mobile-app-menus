@@ -95,6 +95,11 @@ class Admin
 			array(
 				'option_group' => 'alecaddd_options_group',
 				'option_name' => 'first_name'
+			),
+			array(
+				'option_group' => 'alecaddd_options_group',
+				'option_name' => 'test_sev',
+				'callback' => array( $this->callbacks, 'testSev' )
 			)
 		);
 		$this->settings->setSettings( $args );
@@ -134,6 +139,17 @@ class Admin
 				'args' => array(
 					'label_for' => 'first_name',
 					'class' => 'example-class'
+				)
+			),
+			array(
+				'id' => 'test_sev',
+				'title' => 'Test Sev',
+				'callback' => array( $this->callbacks, 'sevTestNew' ),
+				'page' => 'alecaddd_plugin',
+				'section' => 'alecaddd_admin_index',
+				'args' => array(
+					'label_for' => 'test_sev',
+					'class' => 'sev-class'
 				)
 			)
 		);
