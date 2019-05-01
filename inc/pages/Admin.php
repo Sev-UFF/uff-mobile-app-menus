@@ -102,6 +102,20 @@ class Admin
 				'callback' => array( $this->callbacks, 'testSev' )
 			)
 		);
+
+		$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
+
+		foreach ($items as $color) {
+			array_push(
+				$args, 
+				array(
+					'option_group' => 'alecaddd_options_group',
+					'option_name' => "color_$color",
+					'callback' => array( $this->callbacks, 'checkboxSanitize' )
+				)
+			);
+		}
+
 		$this->settings->setSettings( $args );
 	}
 	public function setSections()
@@ -153,6 +167,27 @@ class Admin
 				)
 			)
 		);
+
+
+		$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
+
+		foreach ($items as $color) {
+			array_push(
+				$args, 
+				array(
+					'id' => "color_$color",
+					'title' => $color,
+					'callback' => array( $this->callbacks, 'checkboxField' ),
+					'page' => 'alecaddd_plugin',
+					'section' => 'alecaddd_admin_index',
+					'args' => array(
+						'label_for' => "color_$color",
+						'class' => 'ui-toggle'
+					)
+				)
+			);
+		}
+
 		$this->settings->setFields( $args );
 	}
 }
