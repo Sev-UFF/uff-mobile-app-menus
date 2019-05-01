@@ -5,6 +5,9 @@
 
 namespace Inc\Pages;
 
+
+use Inc\Api\SettingsApi;
+use Inc\Api\Callbacks\AdminCallbacks;
 /*
 class Admin{
     function register(){
