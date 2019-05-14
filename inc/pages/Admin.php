@@ -8,21 +8,7 @@ namespace Inc\Pages;
 
 use Inc\Api\SettingsApi;
 use Inc\Api\Callbacks\AdminCallbacks;
-/*
-class Admin{
-    function register(){
-        add_action('admin_menu', array($this,'add_admin_pages'));
-    }
 
-    function add_admin_pages(){
-        add_menu_page('UFF Mobile App Menus', 'UFF Mobile App Menus', 'manage_options', 'uff_mobile_app_menus_plugin', array($this, 'admin_index'), 'dashicons-smartphone', 110);
-    }
-
-    function admin_index(){
-        require_once plugin_dir_path (UFF_MOBILE_APP_MENUS_FILE) . 'templates/admin.php';
-    }
-}
-*/
 
 class Admin
 {
@@ -30,8 +16,14 @@ class Admin
 	public $callbacks;
 	public $pages = array();
 	public $subpages = array();
+
+
 	public function register() 
 	{
+		add_action('plugins_loaded', array( $this,'lazy_register'));
+	}
+
+	public function lazy_register(){
 		$this->settings = new SettingsApi();
 		$this->callbacks = new AdminCallbacks();
 		$this->setPages();
@@ -41,6 +33,7 @@ class Admin
 		$this->setFields();
 		$this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->register();
 	}
+
 	public function setPages() 
 	{
 		$this->pages = array(
@@ -102,6 +95,20 @@ class Admin
 				'callback' => array( $this->callbacks, 'testSev' )
 			)
 		);
+
+
+		foreach( icl_get_languages() as $language){
+			$code = $language['language_code'];
+			array_push(
+				$args,
+				array(
+					'option_group' => 'alecaddd_options_group',
+					'option_name' => "language_$code",
+					'callback' => array( $this->callbacks, 'testSev' )
+				)
+				);
+		}
+
 
 		$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
 
@@ -167,6 +174,24 @@ class Admin
 				)
 			)
 		);
+
+		foreach( icl_get_languages() as $language){
+			$language_code = $language['language_code'];
+			array_push(
+				$args,
+				array(
+					'id' => "language_$language_code",
+					'title' => "language_$language_code",
+					'callback' => array( $this->callbacks, 'sevTestNew' ),
+					'page' => 'alecaddd_plugin',
+					'section' => 'alecaddd_admin_index',
+					'args' => array(
+						'label_for' => 'test_sev',
+						'class' => 'sev-class'
+					)
+				)
+				);
+		}
 
 
 		$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");

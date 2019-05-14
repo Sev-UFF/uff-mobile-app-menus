@@ -31,17 +31,14 @@ class AdminCallbacks
     
     public function testSev( $input )
 	{
-        echo 'mim acher';
-        echo $input;
-
-		return $input;
+       return $input;
     }
 	public function alecadddAdminSection()
 	{
 		echo 'Check this beautiful section!';
     }
     
-    public function sevTestNew()
+    public function sevTestNew($args)
 	{
 		$value = esc_attr( get_option( 'test_sev' ) );
         echo '</br></br>' . $value . '</br></br>';
@@ -64,7 +61,7 @@ class AdminCallbacks
 	}
 
 	public function checkboxSanitize($input){
-		return ( isset($input) ? true : false );
+		return ( isset($input) ? true : false ); 
 	}
     
 
