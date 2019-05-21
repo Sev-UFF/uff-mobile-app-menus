@@ -48,14 +48,14 @@
 }
 
 
-.tab-content > .menu > .form-table > th {
+.tab-content  .menu  .form-table  th {
     width: 25px !important;
 }
 
-.tab-content > .menu > .form-table > td{
+.tab-content  .menu  .form-table  td{
 	padding: 0px !important;
 }
 
-.tab-content > .menu > .form-table > .menu-item-handle{
+.tab-content  .menu  .form-table  .menu-item-handle{
 	cursor: default !important;
 }

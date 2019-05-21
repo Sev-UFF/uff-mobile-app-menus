@@ -1,7 +1,7 @@
 
 window.addEventListener("load", function() {
 
-	// store tabs variables
+	// tabulação da página
 	var tabs = document.querySelectorAll("ul.nav-tabs > li");
 
 	for (i = 0; i < tabs.length; i++) {
@@ -22,5 +22,58 @@ window.addEventListener("load", function() {
 		document.querySelector(activePaneID).classList.add("active");
 
 	}
+
+	//seleção dos itens de menu pelo checkbox
+	var checkboxes = Array.from(document.querySelectorAll(".tab-content  .menu  .form-table  input[type=checkbox]"));
+
+	for (i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].addEventListener("change", checkboxChanged);
+	}
+
+	function checkboxChanged(event){
+		var element = event.target;
+
+		var children = checkboxes.filter(function (item) {
+			return item != element && item.name.includes(element.name)  ;
+		});
+
+		var fatherIds = element.name.replace("menu_", "").split("_");
+		fatherIds.pop(); //o ultimo elemento já é o id em si
+
+		var parents = [];
+		while (fatherIds.length > 0){
+			var fullName = "menu_" + fatherIds.join("_");
+			var parent = checkboxes.filter(function(item){
+				return item.name == fullName;
+			})[0];
+
+			parents.push(parent);
+
+			fatherIds.pop();
+		}
+
+		children.forEach(child => {
+			child.checked = element.checked;
+		});
+
+		if (element.checked){
+			parents.forEach(parent => {
+				parent.checked = true;
+			});
+		}else{
+			parents.forEach(parent => {
+				var siblings = checkboxes.filter(function(item){
+					return item != parent && item.name.includes(parent.name) && item.checked;
+				})
+
+				if (siblings.length == 0){
+					parent.checked = false
+				}
+			});
+		}
+		
+	}
+
+	
 
 });
