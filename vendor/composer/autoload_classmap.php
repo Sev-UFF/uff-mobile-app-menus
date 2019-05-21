@@ -8,10 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'Inc\\Api\\Callbacks\\AdminCallbacks' => $baseDir . '/inc/Api/Callbacks/AdminCallbacks.php',
     'Inc\\Api\\SettingsApi' => $baseDir . '/inc/Api/SettingsApi.php',
-    'Inc\\Base\\Activate' => $baseDir . '/inc/base/Activate.php',
-    'Inc\\Base\\Deactivate' => $baseDir . '/inc/base/Deactivate.php',
-    'Inc\\Base\\Enqueue' => $baseDir . '/inc/base/Enqueue.php',
-    'Inc\\Base\\SettingsLinks' => $baseDir . '/inc/base/SettingsLinks.php',
+    'Inc\\Base\\Activate' => $baseDir . '/inc/Base/Activate.php',
+    'Inc\\Base\\Deactivate' => $baseDir . '/inc/Base/Deactivate.php',
+    'Inc\\Base\\Enqueue' => $baseDir . '/inc/Base/Enqueue.php',
+    'Inc\\Base\\Menus' => $baseDir . '/inc/Base/Menus.php',
+    'Inc\\Base\\SettingsLinks' => $baseDir . '/inc/Base/SettingsLinks.php',
     'Inc\\Init' => $baseDir . '/inc/Init.php',
-    'Inc\\Pages\\Admin' => $baseDir . '/inc/pages/Admin.php',
+    'Inc\\Pages\\Admin' => $baseDir . '/inc/Pages/Admin.php',
 );

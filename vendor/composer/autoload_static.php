@@ -23,12 +23,13 @@ class ComposerStaticInit1fed6050602f42fceba6c809d3df5ce2
     public static $classMap = array (
         'Inc\\Api\\Callbacks\\AdminCallbacks' => __DIR__ . '/../..' . '/inc/Api/Callbacks/AdminCallbacks.php',
         'Inc\\Api\\SettingsApi' => __DIR__ . '/../..' . '/inc/Api/SettingsApi.php',
-        'Inc\\Base\\Activate' => __DIR__ . '/../..' . '/inc/base/Activate.php',
-        'Inc\\Base\\Deactivate' => __DIR__ . '/../..' . '/inc/base/Deactivate.php',
-        'Inc\\Base\\Enqueue' => __DIR__ . '/../..' . '/inc/base/Enqueue.php',
-        'Inc\\Base\\SettingsLinks' => __DIR__ . '/../..' . '/inc/base/SettingsLinks.php',
+        'Inc\\Base\\Activate' => __DIR__ . '/../..' . '/inc/Base/Activate.php',
+        'Inc\\Base\\Deactivate' => __DIR__ . '/../..' . '/inc/Base/Deactivate.php',
+        'Inc\\Base\\Enqueue' => __DIR__ . '/../..' . '/inc/Base/Enqueue.php',
+        'Inc\\Base\\Menus' => __DIR__ . '/../..' . '/inc/Base/Menus.php',
+        'Inc\\Base\\SettingsLinks' => __DIR__ . '/../..' . '/inc/Base/SettingsLinks.php',
         'Inc\\Init' => __DIR__ . '/../..' . '/inc/Init.php',
-        'Inc\\Pages\\Admin' => __DIR__ . '/../..' . '/inc/pages/Admin.php',
+        'Inc\\Pages\\Admin' => __DIR__ . '/../..' . '/inc/Pages/Admin.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

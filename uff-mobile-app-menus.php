@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: UFF Mobile Api Menus
- * Plugin URI:  https://#
+ * Plugin URI:  https://github.com/sevontheedge/uff-mobile-app-menus
  * Description: Configurações para os menus do aplicativo da UFF.
  *
- * Version:     1.3.1
+ * Version:     0.0.1
  *
  * Author:      Thiago Augusto
- * Author URI:  https://#
+ * Author URI:  https://github.com/sevontheedge
  *
  * Text Domain: uff menus
  *
