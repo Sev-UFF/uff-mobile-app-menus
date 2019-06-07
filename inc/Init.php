@@ -12,7 +12,7 @@ final class Init{
             Pages\Admin::class,
             Base\Enqueue::class,
 			Base\SettingsLinks::class,
-			// Api\RestApi::class,
+			Api\RestApi::class,
         ];
     }
 

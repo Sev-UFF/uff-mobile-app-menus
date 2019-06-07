@@ -37,12 +37,13 @@ window.addEventListener("load", function() {
 			return item != element && item.name.includes(element.name)  ;
 		});
 
-		var fatherIds = element.name.replace("menu_", "").split("_");
-		fatherIds.pop(); //o ultimo elemento já é o id em si
+		var split = element.name.split("_");
+		var lang = split[1];
+		var fatherIds = split.slice(2, split.length - 1);
 
 		var parents = [];
 		while (fatherIds.length > 0){
-			var fullName = "menu_" + fatherIds.join("_");
+			var fullName = "menu_" + lang + "_" + fatherIds.join("_");
 			var parent = checkboxes.filter(function(item){
 				return item.name == fullName;
 			})[0];

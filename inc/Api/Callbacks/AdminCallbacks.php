@@ -23,7 +23,15 @@ class AdminCallbacks
 		$menu_title = $args['menu_title'];
 		$depth = $args['depth'];
 
+		$flag = '';
+
+		if (array_key_exists('flag', $args)){
+			$url = $args['flag'];
+			$flag = "<img class='flag-image' src='$url'>";
+		}
+
 		$item = "
+		$flag
 		<div id='menu-item-$option_id' class='menu-item menu-item-depth-$depth  menu-item-edit-inactive'>
 			<div class='menu-item-bar'>
 				<div class='menu-item-handle '>

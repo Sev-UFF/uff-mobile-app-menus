@@ -22,6 +22,7 @@ class ComposerStaticInit1fed6050602f42fceba6c809d3df5ce2
 
     public static $classMap = array (
         'Inc\\Api\\Callbacks\\AdminCallbacks' => __DIR__ . '/../..' . '/inc/Api/Callbacks/AdminCallbacks.php',
+        'Inc\\Api\\RestApi' => __DIR__ . '/../..' . '/inc/Api/RestApi.php',
         'Inc\\Api\\SettingsApi' => __DIR__ . '/../..' . '/inc/Api/SettingsApi.php',
         'Inc\\Base\\Activate' => __DIR__ . '/../..' . '/inc/Base/Activate.php',
         'Inc\\Base\\Deactivate' => __DIR__ . '/../..' . '/inc/Base/Deactivate.php',

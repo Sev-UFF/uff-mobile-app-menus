@@ -11,7 +11,7 @@ class Enqueue{
     }
 
      function enqueue(){
-        wp_enqueue_style('uffmobilestyle',  plugin_dir_url (UFF_MOBILE_APP_MENUS_FILE)  . 'assets/uff-mobile-style.css');
-        wp_enqueue_script('uffmobilescript', plugin_dir_url (UFF_MOBILE_APP_MENUS_FILE) . 'assets/uff-mobile-script.js');
+        wp_enqueue_style('uffmobilestyle',  plugin_dir_url (UFF_MOBILE_APP_MENUS_FILE)  . 'assets/uff-mobile-style.css', array(),UFF_MOBILE_APP_MENUS_VERSION );
+        wp_enqueue_script('uffmobilescript', plugin_dir_url (UFF_MOBILE_APP_MENUS_FILE) . 'assets/uff-mobile-script.js', array(),UFF_MOBILE_APP_MENUS_VERSION  );
     }
 }

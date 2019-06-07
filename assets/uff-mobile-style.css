@@ -52,6 +52,10 @@
     width: 25px !important;
 }
 
+.tab-content  .flag-image {
+    margin-top: 25px;
+}
+
 .tab-content  .menu  .form-table  td{
 	padding: 0px !important;
 }

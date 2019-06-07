@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-define( 'UFF_MOBILE_APP_MENUS_VERSION', '0.0.1' );
+define( 'UFF_MOBILE_APP_MENUS_VERSION', '0.0.5' );
 
 if ( ! defined( 'UFF_MOBILE_APP_MENUS_FILE' ) ) {
 	define( 'UFF_MOBILE_APP_MENUS_FILE', __FILE__ );

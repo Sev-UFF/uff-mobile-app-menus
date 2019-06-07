@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Inc\\Api\\Callbacks\\AdminCallbacks' => $baseDir . '/inc/Api/Callbacks/AdminCallbacks.php',
+    'Inc\\Api\\RestApi' => $baseDir . '/inc/Api/RestApi.php',
     'Inc\\Api\\SettingsApi' => $baseDir . '/inc/Api/SettingsApi.php',
     'Inc\\Base\\Activate' => $baseDir . '/inc/Base/Activate.php',
     'Inc\\Base\\Deactivate' => $baseDir . '/inc/Base/Deactivate.php',
