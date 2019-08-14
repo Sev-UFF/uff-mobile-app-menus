@@ -71,13 +71,6 @@ class AdminCallbacks
         }
         echo "</select>";
 	}
-	
-	// public function checkboxField($args){
-	// 	$name = $args['label_for'];
-	// 	$classes = $args['class'];
-	// 	$checkbox = get_option( $name );
-	// 	echo '<input type="checkbox" name="' . $name . '" value="1" class="' . $classes . '" ' . ($checkbox ? 'checked' : '') . '>';
-	// }
 
 	public function checkboxSanitize($input){
 		return ( isset($input) ? true : false ); 

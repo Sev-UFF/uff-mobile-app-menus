@@ -53,7 +53,9 @@ class RestApi
     public function get_page( $request ) {
         $id = $request['id'];
         $url = get_page_link($id);
-        $response = wp_remote_get( $url );
+        $response = wp_remote_get( $url, array(
+            'timeout'     => 120,
+        ) );
         $body = $response['body'];
         $doc = new \DOMDocument();
         @$doc->loadHTML($body);
